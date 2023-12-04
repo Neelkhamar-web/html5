@@ -1,0 +1,170 @@
+Q-1   Validate the Password with jQuery.(Check the strength of Password) It will visually display the quality of the user’s password if it is weak, medium or strong   After execution of the code following result must be displayed.
+
+
+
+
+ans-<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Checker</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    #password-strength {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .weak {
+      color: red;
+    }
+    .medium {
+      color: orange;
+    }
+    .strong {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" onkeyup="checkPasswordStrength()">
+
+  <div id="password-strength"></div>
+
+  <script>
+    function checkPasswordStrength() {
+      var password = $('#password').val();
+      var strength = 0;
+
+      // Check length
+      if (password.length >= 8) {
+        strength += 1;
+      }
+
+      // Check for numbers
+      if (/\d+/.test(password)) {
+        strength += 1;
+      }
+
+      // Check for uppercase letters
+      if (/[A-Z]/.test(password)) {
+        strength += 1;
+      }
+
+      // Check for lowercase letters
+      if (/[a-z]/.test(password)) {
+        strength += 1;
+      }
+
+      // Check for special characters
+      if (/[$&+,:;=?@#|'<>.^*()%!-]/.test(password)) {
+        strength += 1;
+      }
+
+      // Display the strength
+      if (strength <= 2) {
+        $('#password-strength').text('Weak').removeClass().addClass('weak');
+      } else if (strength == 3) {
+        $('#password-strength').text('Medium').removeClass().addClass('medium');
+      } else {
+        $('#password-strength').text('Strong').removeClass().addClass('strong');
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
+q-2-Make sure each business logic is denoted with appropriate comments and
+make your code interactive and represent clean and clear output on your
+console screen.
+ Set the following jQuery plugins in the footer of your design.
+<script type="text/javascript" src="jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="passChecker.jquery.js"></script
+
+
+ans:-<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Checker</title>
+  <style>
+    #password-strength {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .weak {
+      color: red;
+    }
+    .medium {
+      color: orange;
+    }
+    .strong {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" onkeyup="checkPasswordStrength()">
+
+  <div id="password-strength"></div>
+
+  <!-- Include jQuery -->
+  <script type="text/javascript" src="jquery-2.2.4.min.js"></script>
+
+  <!-- Include Password Strength Checker Plugin -->
+  <script type="text/javascript" src="passChecker.jquery.js"></script>
+
+  <script>
+    // Function to check password strength
+    function checkPasswordStrength() {
+      var password = $('#password').val();
+      var strength = 0;
+
+      // Check length
+      if (password.length >= 8) {
+        strength += 1;
+      }
+
+      // Check for numbers
+      if (/\d+/.test(password)) {
+        strength += 1;
+      }
+
+      // Check for uppercase letters
+      if (/[A-Z]/.test(password)) {
+        strength += 1;
+      }
+
+      // Check for lowercase letters
+      if (/[a-z]/.test(password)) {
+        strength += 1;
+      }
+
+      // Check for special characters
+      if (/[$&+,:;=?@#|'<>.^*()%!-]/.test(password)) {
+        strength += 1;
+      }
+
+      // Display the strength
+      if (strength <= 2) {
+        $('#password-strength').text('Weak').removeClass().addClass('weak');
+      } else if (strength == 3) {
+        $('#password-strength').text('Medium').removeClass().addClass('medium');
+      } else {
+        $('#password-strength').text('Strong').removeClass().addClass('strong');
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
+
