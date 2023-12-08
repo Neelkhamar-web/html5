@@ -1,0 +1,359 @@
+que:1-What is JavaScript?
+
+ans:-JavaScript is a high-level, interpreted programming language that is primarily used for adding interactivity and dynamic behavior to web pages. It is commonly employed in web development alongside HTML and CSS.
+
+que:2-What is the use of isNaN function?
+
+The isNaN function is used to check whether a value is NaN (Not a Number) or not. It returns true if the value is NaN, and false otherwise.
+
+que:3-What is negative Infinity?
+
+Negative Infinity is a special value in JavaScript representing the mathematical concept of negative infinity. It is used to represent a value that is smaller than any other number, including negative numbers.
+que:4-Which company developed JavaScript?
+
+JavaScript was developed by Netscape Communications Corporation, specifically by Brendan Eich. It was first introduced in Netscape Navigator 2.0 in 1995.
+
+que:5-What are undeclared and undefined variables?
+
+An undeclared variable is a variable that has been used in code without being declared using var, let, or const. An undefined variable is a variable that has been declared but not assigned any value.
+
+que:6-Write the code for adding new elements dynamically?
+
+Here's an example using JavaScript to add a new paragraph element dynamically to the body of an HTML document:
+javascript
+Copy code
+var paragraph = document.createElement("p");
+var textNode = document.createTextNode("This is a new paragraph.");
+paragraph.appendChild(textNode);
+document.body.appendChild(paragraph);
+que:1-What is the difference between ViewState and SessionState?
+
+ViewState is used to store the state of a single page in ASP.NET, while SessionState is used to store the state that is specific to a particular user across multiple pages.
+que:7-What is === operator?
+
+The === operator in JavaScript is the strict equality operator. It checks both value and type for equality. If both the value and the type are the same, it returns true; otherwise, it returns false.
+
+que:8-How can the style/class of an element be changed?
+
+To change the style of an element:
+javascript
+Copy code
+document.getElementById("elementId").style.property = "newStyle";
+To change the class of an element:
+javascript
+Copy code
+document.getElementById("elementId").className = "newClassName";
+
+que:9-How to read and write a file using JavaScript?
+
+In a web browser environment, JavaScript has limited access to the file system for security reasons. You can use File API for client-side operations. On the server-side (Node.js), you can use the fs module for file operations.
+
+que:10-What are all the looping structures in JavaScript?
+JavaScript has several looping structures, including for, while, do-while, and for...in. The for...of loop is also available for iterating over iterable objects.
+
+que:11-How can you convert the string of any base to an integer in JavaScript?
+You can use parseInt function and provide the base as the second parameter. For example:
+javascript
+Copy code
+var binaryString = "1010";
+var decimalNumber = parseInt(binaryString, 2);
+
+que:12-What is the function of the delete operator?
+The delete operator in JavaScript is used to delete an object's property or an element at a specified index in an array.
+
+que:13-What are all the types of Pop up boxes available in JavaScript?
+JavaScript provides three types of pop-up boxes: alert, confirm, and prompt. These are used for displaying messages, getting user confirmation, and receiving user input, respectively.
+What is the use of Void(0)?
+void(0) is often used in JavaScript as a way to produce an undefined value. It is commonly used in the href attribute of a link to prevent the browser from navigating to a new page when the link is clicked.
+que:14-How can a page be forced to load another page in JavaScript?
+You can use the window.location object to redirect the browser to a new page. For example:
+javascript
+Copy code
+window.location.href = "https://www.example.com";
+que:15-What are the disadvantages of using innerHTML in JavaScript?
+Using innerHTML to manipulate the content of an element can lead to security vulnerabilities like Cross-Site Scripting (XSS) if not handled properly. It also may not be as efficient as other DOM manipulation methods for large-scale applications.
+Create a password field with show/hide functionalities:
+html
+Copy code
+<input type="password" id="passwordField">
+<input type="checkbox" onclick="togglePasswordVisibility()"> Show Password
+
+<script>
+  function togglePasswordVisibility() {
+    var passwordField = document.getElementById("passwordField");
+    if (passwordField.type === "password") {
+      passwordField.type = "text";
+    } else {
+      passwordField.type = "password";
+    }
+  }
+</script>
+This code creates a password input field and a checkbox to toggle the visibility of the entered password. The togglePasswordVisibility function is called when the checkbox is clicked, changing the input field's type between "password" and "text".
+
+
+Que:16-<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .password-container {
+      position: relative;
+    }
+
+    #passwordField {
+      padding-right: 30px; /* Space for the toggle button */
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+  </style>
+  <title>Password Field with Show/Hide</title>
+</head>
+<body>
+
+<div class="password-container">
+  <label for="passwordField">Password:</label>
+  <input type="password" id="passwordField">
+  <span class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
+</div>
+
+<script>
+  function togglePasswordVisibility() {
+    var passwordField = document.getElementById("passwordField");
+    var toggleButton = document.querySelector(".toggle-password");
+
+    if (passwordField.type === "password") {
+      passwordField.type = "text";
+      toggleButton.textContent = "👁️";
+    } else {
+      passwordField.type = "password";
+      toggleButton.textContent = "👁️";
+    }
+  }
+</script>
+
+</body>
+</html>
+
+
+
+Que:17-Create basic math operation in JS?
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Math Operations with User Input</title>
+</head>
+<body>
+
+<form id="mathForm">
+  <label for="number1">Enter Number 1:</label>
+  <input type="number" id="number1" required>
+
+  <label for="number2">Enter Number 2:</label>
+  <input type="number" id="number2" required>
+
+  <button type="button" onclick="performMathOperations()">Perform Math Operations</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+  function performMathOperations() {
+    // Get user input
+    var number1 = parseFloat(document.getElementById("number1").value);
+    var number2 = parseFloat(document.getElementById("number2").value);
+
+    // Check if the input is valid
+    if (isNaN(number1) || isNaN(number2)) {
+      alert("Please enter valid numbers.");
+      return;
+    }
+
+    // Perform basic math operations
+    var sum = number1 + number2;
+    var difference = number1 - number2;
+    var product = number1 * number2;
+    var quotient = number1 / number2;
+    var remainder = number1 % number2;
+
+    // Display the results
+    var resultMessage = `
+      <p>Sum: ${sum}</p>
+      <p>Difference: ${difference}</p>
+      <p>Product: ${product}</p>
+      <p>Quotient: ${quotient}</p>
+      <p>Remainder: ${remainder}</p>
+    `;
+
+    document.getElementById("result").innerHTML = resultMessage;
+  }
+</script>
+
+</body>
+</html>
+
+que:18-Create result ?
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programming Languages Marks Sheet</title>
+</head>
+<body>
+
+<form id="marksForm">
+  <label for="htmlMarks">HTML Marks:</label>
+  <input type="number" id="htmlMarks" required>
+
+  <label for="cssMarks">CSS Marks:</label>
+  <input type="number" id="cssMarks" required>
+
+  <label for="jsMarks">JavaScript Marks:</label>
+  <input type="number" id="jsMarks" required>
+
+  <button type="button" onclick="calculatePercentage()">Calculate Percentage</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+  function calculatePercentage() {
+    // Get user input
+    var htmlMarks = parseFloat(document.getElementById("htmlMarks").value);
+    var cssMarks = parseFloat(document.getElementById("cssMarks").value);
+    var jsMarks = parseFloat(document.getElementById("jsMarks").value);
+
+    // Check if the input is valid
+    if (isNaN(htmlMarks) || isNaN(cssMarks) || isNaN(jsMarks) ||
+        htmlMarks < 0 || htmlMarks > 100 || cssMarks < 0 || cssMarks > 100 || jsMarks < 0 || jsMarks > 100) {
+      alert("Please enter valid marks for all subjects.");
+      return;
+    }
+
+    // Calculate overall percentage
+    var totalMarks = htmlMarks + cssMarks + jsMarks;
+    var totalSubjects = 3;
+    var overallPercentage = (totalMarks / (totalSubjects * 100)) * 100;
+
+    // Display the result
+    var resultMessage = `
+      <h2>Programming Languages Marks Sheet</h2>
+      <p>HTML Marks: ${htmlMarks}</p>
+      <p>CSS Marks: ${cssMarks}</p>
+      <p>JavaScript Marks: ${jsMarks}</p>
+      <p>Total Marks: ${totalMarks}</p>
+      <p>Overall Percentage: ${overallPercentage.toFixed(2)}%</p>
+    `;
+
+    document.getElementById("result").innerHTML = resultMessage;
+  }
+</script>
+
+</body>
+</html>
+
+
+
+Que:19:slider?
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <style>
+    #slider-container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    #image-slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      width: 100%;
+    }
+
+    #prev-btn, #next-btn {
+      cursor: pointer;
+      font-size: 24px;
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="slider-container">
+  <div id="image-slider">
+    <div class="slide"><img src="image1.jpg" alt="Image 1"></div>
+    <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
+    <div class="slide"><img src="image3.jpg" alt="Image 3"></div>
+    <!-- Add more slides as needed -->
+  </div>
+</div>
+
+<button id="prev-btn" onclick="prevSlide()">❮</button>
+<button id="next-btn" onclick="nextSlide()">❯</button>
+
+<script>
+  var currentIndex = 0;
+  var totalSlides = document.querySelectorAll('.slide').length;
+
+  function showSlide(index) {
+    if (index < 0) {
+      currentIndex = totalSlides - 1;
+    } else if (index >= totalSlides) {
+      currentIndex = 0;
+    } else {
+      currentIndex = index;
+    }
+
+    var slider = document.getElementById('image-slider');
+    var translateValue = -currentIndex * 100 + '%';
+    slider.style.transform = 'translateX(' + translateValue + ')';
+  }
+
+  function prevSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
