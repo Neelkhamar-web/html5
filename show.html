@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Navbar with Items and Search</title>
+</head>
+<body>
+  <div>
+    <!-- Navbar Section -->
+    <nav class="navbar bg-body-tertiar .text-danger bg-danger">
+      <div class="container-fluid ">
+        <a class="navbar-brand" href="#">Bootstrap</a>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Search Section -->
+    <div class="bg-danger">
+      <span><h1 class="h1" style="text-align: center;">Class Name</h1></span>
+      <div class="flex items-center justify-center space-x-4" > 
+        <input class="border p-2 rounded h-2 bg-dark" placeholder="Search..."/>
+        <button class="bg-gray-50 border-solid border-current border-1 p-1/3 w-28 bg-dark text-white " ><span class=" py-1/4 ">search </span></button>
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="grid grid-cols-2 gap-4 mt-5">
+      <div class="px-auto pt-10">
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <p class="px-auto pt-3"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, facilis! Odio modi natus nobis commodi vel cumque reprehenderit in eius ab tenetur repellat at consequuntur tempora, quisquam magni aperiam delectus suscipit nam magnam quod et incidunt, sunt vero voluptas. Exercitationem tempora quae pariatur vel itaque.</p>
+      </div>
+        
+      <div><img src="chart.jpg"/> </div>
+    </div>
+
+    <div>
+      <span><h1 class="h1 mt-20" style="text-align: center;">Class Name</h1></span>
+
+      <div class="mt-20 px-auto container">
+        <div class="grid grid-cols-3 gap-4   mt-10">
+          <i class="fa-solid fa-heart text-center"><br/><br/><span>Heart</span></i>
+          <i class="fa-solid fa-power-off text-center"><br/><br/><span>Power</span></i>
+          <i class="fa-solid fa-lock text-center"><br/><br/> <span>Lock</span></i>
+        </div>
+        <div class="grid grid-cols-3 gap-4 mx-auto  mt-20">
+          <i class="fa-solid fa-leaf text-center"><br/><br/><span>Leaf</span></i>
+          <i class="fa-solid fa-phone text-center"><br/><br/><span>Phone</span></i>
+          <i class="fa-solid fa-sun text-center"><br/><br/><span>Sun</span></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Details Section -->
+    <div class="container mt-20">
+      <h1 class="text-center">Adress</h1>
+      <div class="row">
+        <!-- Address Column -->
+        <div class="col-md-6 mt-10">
+          <h2>Contact Details</h2>
+          <address>
+            <strong>Your Company Name</strong><br>
+            123 Street Name<br>
+            City, State 12345<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+          </address>
+        </div>
+
+        <!-- Address Form Column -->
+        <div class="col-md-6 mt-10">
+          <h2>Address Form</h2>
+          <form>
+            <div class="form-group">
+              <label for="address">Address:</label>
+              <input type="text" class="form-control" id="address" name="address" placeholder="Enter your address">
+            </div>
+            <div class="form-group">
+              <label for="city">City:</label>
+              <input type="text" class="form-control" id="city" name="city" placeholder="Enter your city">
+            </div>
+            <div class="form-group">
+              <label for="state">State:</label>
+              <input type="text" class="form-control" id="state" name="state" placeholder="Enter your state">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+
+        <!-- Map Column -->
+        <div class="col-md-12 mt-3">
+          <!-- Replace the iframe src attribute with your map embed code -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.678901234567!2d-75.12345678901234!3d40.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDQwJzIwLjYiTiA3NcKwMjknMTcuNSJX!5e0!3m2!1sen!2sus!4v1594815836465!5m2!1sen!2sus"
+          width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rest of your content... -->
+
+  </div>
+
+  <!-- Bootstrap JS and Popper.js CDN -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
